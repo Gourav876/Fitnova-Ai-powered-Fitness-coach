@@ -68,5 +68,25 @@
         "average_form": 85.6,
         "duration": "00:51",
         "performance": "Good"
+    },
+    {
+        "date": "2026-09-13",
+        "time": "16:21:07",
+        "exercise": "Squat",
+        "reps": 0,
+        "best_form": 85.0,
+        "average_form": 85.0,
+        "duration": "00:19",
+        "performance": "Good"
+    },
+    {
+        "date": "2026-09-13",
+        "time": "18:09:26",
+        "exercise": "Push-up",
+        "reps": 1,
+        "best_form": 100.0,
+        "average_form": 94.8,
+        "duration": "00:25",
+        "performance": "Excellent"
     }
 ]

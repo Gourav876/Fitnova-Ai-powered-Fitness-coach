@@ -1,4 +1,4 @@
-
+from exercise_selector import ExerciseSelector
 
 from pose_detector import run_squat_detection
 
@@ -7,6 +7,8 @@ from pushup_detector import run_pushup_detection
 from bicep_detector import run_bicep_detection
 
 from progress import FitnessProgress
+
+from ai_coach import AICoach
 
 
 # ============================================================
@@ -20,14 +22,14 @@ def show_progress():
     summary = progress.get_progress_summary()
 
     print()
-    print("==========================================")
+    print("=" * 50)
     print("           FITNOVA PROGRESS")
-    print("==========================================")
+    print("=" * 50)
     print()
 
-    # --------------------------------------------------------
+    # ========================================================
     # BASIC STATISTICS
-    # --------------------------------------------------------
+    # ========================================================
 
     print(
         f"Total Workouts : "
@@ -51,12 +53,12 @@ def show_progress():
 
     print()
 
-    # --------------------------------------------------------
+    # ========================================================
     # EXERCISE COUNTS
-    # --------------------------------------------------------
+    # ========================================================
 
     print("Workout Count by Exercise")
-    print("------------------------------------------")
+    print("-" * 50)
 
     exercise_counts = summary["exercise_counts"]
 
@@ -74,12 +76,12 @@ def show_progress():
 
     print()
 
-    # --------------------------------------------------------
+    # ========================================================
     # REPS BY EXERCISE
-    # --------------------------------------------------------
+    # ========================================================
 
     print("Total Reps by Exercise")
-    print("------------------------------------------")
+    print("-" * 50)
 
     reps_by_exercise = summary["reps_by_exercise"]
 
@@ -97,12 +99,12 @@ def show_progress():
 
     print()
 
-    # --------------------------------------------------------
+    # ========================================================
     # RECENT WORKOUTS
-    # --------------------------------------------------------
+    # ========================================================
 
     print("Recent Workouts")
-    print("------------------------------------------")
+    print("-" * 50)
 
     recent_workouts = summary["recent_workouts"]
 
@@ -147,12 +149,171 @@ def show_progress():
 
     print()
 
-    print("==========================================")
+    print("=" * 50)
     print()
 
     input(
         "Press Enter to return to the menu..."
     )
+
+
+# ============================================================
+# AI COACH
+# ============================================================
+
+def run_ai_coach():
+
+    """
+    Start the FitNova AI Coach.
+
+    The AI Coach has access to the user's
+    workout history through AICoach.
+    """
+
+    coach = AICoach()
+
+    print()
+    print("=" * 60)
+    print("                 FITNOVA AI COACH")
+    print("=" * 60)
+    print()
+
+    print(
+        "Your personal AI fitness coach is ready."
+    )
+
+    print()
+
+    print("You can ask things like:")
+
+    print(
+        "• How am I progressing?"
+    )
+
+    print(
+        "• How was my last workout?"
+    )
+
+    print(
+        "• What should I train today?"
+    )
+
+    print(
+        "• How many sets and reps should I do?"
+    )
+
+    print(
+        "• Suggest a workout for me."
+    )
+
+    print(
+        "• What should I eat after my workout?"
+    )
+
+    print(
+        "• Suggest some healthy recipes."
+    )
+
+    print()
+
+    print(
+        "Type 'exit' to return to the main menu."
+    )
+
+    print()
+
+    # ========================================================
+    # CHAT LOOP
+    # ========================================================
+
+    while True:
+
+        try:
+
+            question = input(
+                "You: "
+            ).strip()
+
+        except KeyboardInterrupt:
+
+            print()
+            print(
+                "Returning to FitNova..."
+            )
+            print()
+
+            break
+
+        except EOFError:
+
+            print()
+            print(
+                "Returning to FitNova..."
+            )
+            print()
+
+            break
+
+        # ====================================================
+        # EMPTY QUESTION
+        # ====================================================
+
+        if not question:
+
+            continue
+
+        # ====================================================
+        # EXIT AI COACH
+        # ====================================================
+
+        if question.lower() in [
+            "exit",
+            "quit",
+            "back",
+            "menu"
+        ]:
+
+            print()
+            print(
+                "FitNova Coach: "
+                "Great work! Keep training consistently."
+            )
+
+            print()
+
+            break
+
+        # ====================================================
+        # SEND QUESTION TO AI
+        # ====================================================
+
+        print()
+
+        print(
+            "FitNova Coach: Thinking..."
+        )
+
+        print()
+
+        answer = coach.ask(
+            question
+        )
+
+        print(
+            "FitNova Coach:"
+        )
+
+        print()
+
+        print(
+            answer
+        )
+
+        print()
+
+        print("-" * 60)
+
+        print()
 
 
 # ============================================================
@@ -164,16 +325,17 @@ def main():
     while True:
 
         print()
-        print("==========================================")
+        print("=" * 50)
         print("       FITNOVA AI FITNESS COACH")
-        print("==========================================")
+        print("=" * 50)
         print()
 
         print("1. Squat")
         print("2. Push-up")
         print("3. Bicep Curl")
         print("4. View Progress")
-        print("5. Exit")
+        print("5. AI Coach")
+        print("6. Exit")
 
         print()
 
@@ -232,15 +394,25 @@ def main():
             show_progress()
 
         # ====================================================
-        # EXIT
+        # AI COACH
         # ====================================================
 
         elif choice == "5":
 
+            run_ai_coach()
+
+        # ====================================================
+        # EXIT
+        # ====================================================
+
+        elif choice == "6":
+
             print()
-            print("==========================================")
-            print("       Thank you for using FitNova!")
-            print("==========================================")
+            print("=" * 50)
+            print(
+                "       Thank you for using FitNova!"
+            )
+            print("=" * 50)
             print()
 
             break
@@ -252,10 +424,16 @@ def main():
         else:
 
             print()
-            print("Invalid option.")
+
             print(
-                "Please select 1, 2, 3, 4, or 5."
+                "Invalid option."
             )
+
+            print(
+                "Please select 1, 2, 3, 4, 5, or 6."
+            )
+
+            print()
 
 
 # ============================================================
