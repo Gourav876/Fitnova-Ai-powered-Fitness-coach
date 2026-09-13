@@ -1,0 +1,72 @@
+[
+    {
+        "date": "2026-09-13",
+        "time": "13:27:40",
+        "exercise": "Bicep Curl",
+        "reps": 10,
+        "best_form": 100,
+        "average_form": 67.6,
+        "duration": "00:53",
+        "performance": "Needs Improvement"
+    },
+    {
+        "date": "2026-09-13",
+        "time": "13:32:39",
+        "exercise": "Squat",
+        "reps": 5,
+        "best_form": 100,
+        "average_form": 85.4,
+        "duration": "00:54",
+        "performance": "Good"
+    },
+    {
+        "date": "2026-09-13",
+        "time": "13:36:38",
+        "exercise": "Push-up",
+        "reps": 8,
+        "best_form": 100,
+        "average_form": 81.0,
+        "duration": "00:58",
+        "performance": "Good"
+    },
+    {
+        "date": "2026-09-13",
+        "time": "13:49:18",
+        "exercise": "Squat",
+        "reps": 3,
+        "best_form": 100,
+        "average_form": 85.8,
+        "duration": "00:46",
+        "performance": "Good"
+    },
+    {
+        "date": "2026-09-13",
+        "time": "13:50:12",
+        "exercise": "Push-up",
+        "reps": 3,
+        "best_form": 100,
+        "average_form": 76.9,
+        "duration": "00:47",
+        "performance": "Good"
+    },
+    {
+        "date": "2026-09-13",
+        "time": "13:51:18",
+        "exercise": "Bicep Curl",
+        "reps": 10,
+        "best_form": 100,
+        "average_form": 71.9,
+        "duration": "00:48",
+        "performance": "Needs Improvement"
+    },
+    {
+        "date": "2026-09-13",
+        "time": "14:06:13",
+        "exercise": "Squat",
+        "reps": 4,
+        "best_form": 100.0,
+        "average_form": 85.6,
+        "duration": "00:51",
+        "performance": "Good"
+    }
+]
